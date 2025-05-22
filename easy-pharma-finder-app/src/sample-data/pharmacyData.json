@@ -1,0 +1,44 @@
+{
+    "66221": [
+      {
+        "pharmacy_name": "CVS Pharmacy",
+        "address": "123 Two St",
+        "city": "Shawnee Mission",
+        "state": "KS",
+        "zip_code": "66221"
+      },
+      {
+        "pharmacy_name": "Walgreens Pharmacy",
+        "address": "One St",
+        "city": "Shawnee Mission",
+        "state": "KS",
+        "zip_code": "66221"
+      },
+      {
+        "pharmacy_name": "Walmart Pharmacy",
+        "address": "Three St",
+        "city": "Shawnee Mission",
+        "state": "KS",
+        "zip_code": "66221"
+      }
+    ],
+
+    "66209": [
+      {
+        "pharmacy_name": "Rite Aid Pharmacy",
+        "address": "Four St",
+        "city": "Olathe",
+        "state": "KS",
+        "zip_code": "66209"
+      },
+      {
+        "pharmacy_name": "Costco Pharmacy",
+        "address": "Five St",
+        "city": "Olathe",
+        "state": "KS",
+        "zip_code": "66209"
+      }
+    ]
+    
+  }
+  
