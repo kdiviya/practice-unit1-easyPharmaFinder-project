@@ -1,17 +1,20 @@
 import { Link } from "react-router-dom";
-//     <li><Link to="/pharma-finder">Pharmacy Finder</Link></li>
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse, faUser,faMortarPestle, faLock } from '@fortawesome/free-solid-svg-icons';
+import logo from './images/logo.jpeg';
+
 const Header = () => {
 
     return (
         <div className="header">
-          <h2>Easy Pharma Finder</h2>
+          <img src={logo} alt="Mortar Pestle Logo" className="logo"/>
+          <h1>Easy Pharma Finder</h1>
          
             <ul id="menu">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About us</Link></li>
-                <li><Link to= "/new-user">New User</Link></li>
-           
-                <li>Existing User</li>
+                <li><Link to="/"><FontAwesomeIcon icon={faHouse}/>Home</Link></li>
+                <li><Link to="/about"><FontAwesomeIcon icon={faMortarPestle} />About us</Link></li>
+                <li><Link to= "/new-user"><FontAwesomeIcon icon={faUser}/>New User</Link></li>
+                <li><Link to="/about"><FontAwesomeIcon icon={faLock}/>Login</Link></li>
             </ul>
 
         </div>

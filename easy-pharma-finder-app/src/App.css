@@ -2,20 +2,31 @@
   background-color:white ;
   display: flex;
   padding: 0 10px;
+  
+}
+
+.logo {
+  height: 80px; 
+  margin-right: 15px;
 }
 
 .container {   
-
   text-align: left;
   min-height: 100vh;
 }
 
-h2{
+h1 {
   flex: 1;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color:rgb(12, 12, 12);
-
 }
+
+h2 {
+  flex: 1;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color:rgb(12, 12, 12);
+}
+
 .content {
   margin: 0 auto;
   padding: 20px;
@@ -50,15 +61,26 @@ p{
 }
 
 #menu li{
-  display: inline;
+  display: inline-block;
   margin-right: 60px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 18px;
   font-weight:normal;
   color:black;  
 }
+
 #menu li a {
+  display: inline-flex;     
+  align-items: center;       
+  gap: 8px;               
+  color: black;
+  text-decoration: none;     
+}
+
+#menu li a:hover {
   color: #000;
+  gap:8px;
+  text-decoration: underline;
 }
 
 ul{
@@ -67,10 +89,8 @@ ul{
 
 }
 
-.new-user-form{
+.new-user-form {
   display:grid;
-  
-
 }
 
 .new-user-form label {
@@ -127,7 +147,6 @@ fieldset {
 }
 
 #pharma-finder{
- 
   height:50px;
   width:200px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

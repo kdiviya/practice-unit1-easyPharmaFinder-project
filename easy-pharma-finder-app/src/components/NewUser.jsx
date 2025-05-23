@@ -8,7 +8,6 @@ import PharmacyFinder from "./PharmacyFinder";
 
 const NewUser = () => {
    
-
     //create state variable for country, state  & cities and get the values from the package "country-state-city"
     const[countries, setCountries] = useState(Country.getAllCountries());
     const[states, setStates] = useState([]);
