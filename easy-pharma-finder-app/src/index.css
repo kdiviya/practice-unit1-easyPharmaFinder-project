@@ -2,6 +2,7 @@ body {
   margin: 0; 
   padding: 0;
   background-image: url('./components/images/Intro_image.jpeg');
+  font-family: 'Lato';
   background-size: cover;
   background-repeat: no-repeat;
 }

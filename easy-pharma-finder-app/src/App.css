@@ -17,13 +17,11 @@
 
 h1 {
   flex: 1;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color:rgb(12, 12, 12);
 }
 
 h2 {
   flex: 1;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color:rgb(12, 12, 12);
 }
 
@@ -35,8 +33,7 @@ h2 {
 }
 
 footer{
-  text-align: left;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: left; 
   font-size: 18px;
   background-color: #FFF;
   padding: 5px 10px;
@@ -45,10 +42,10 @@ footer{
 p{
  
   text-align: left;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 18px;
   font-weight:normal;
   color:rgb(12, 12, 12);   
+  line-height: 2rem;
 }
 
 #menu {
@@ -57,36 +54,39 @@ p{
   padding:10px;
   margin: 0;
   background-color:white;
+  align-self: flex-end; 
 
 }
 
 #menu li{
   display: inline-block;
   margin-right: 60px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 18px;
   font-weight:normal;
   color:black;  
 }
 
+#menu li span {
+  margin-right: 8px;
+}
+
 #menu li a {
   display: inline-flex;     
-  align-items: center;       
-  gap: 8px;               
+  align-items: center;
+  gap: 8px;     
   color: black;
-  text-decoration: none;     
+  text-decoration: none;    
 }
 
 #menu li a:hover {
   color: #000;
-  gap:8px;
+  gap: 8px;
   text-decoration: underline;
 }
 
-ul{
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.about {
   font-size: 18px;
-
+  line-height: 2rem;
 }
 
 .new-user-form {
@@ -95,8 +95,7 @@ ul{
 
 .new-user-form label {
   margin-top: 10px;
-  margin-bottom: 5px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-bottom: 5px; 
   font-size: 18px;
   
 }
@@ -108,7 +107,6 @@ ul{
 }
 
 .address{
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 18px;
 }
 
@@ -117,7 +115,6 @@ ul{
 }
 
 .dropdown{
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 18px;
   width: 200px;
   margin-right: 8px;
@@ -128,17 +125,17 @@ ul{
 }
 
 .insurance-type{
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 18px;
 }
-.button-container {
+
+.button-submit {
   display: flex;
   justify-content: center;
   padding-top: 20px;
 }
+
 #submit {
   width: 100px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 18px;
 }
 
@@ -149,7 +146,6 @@ fieldset {
 #pharma-finder{
   height:50px;
   width:200px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 18px;
   cursor:pointer;
   margin-left: 500px;
@@ -161,6 +157,11 @@ fieldset {
   max-width: 2000px;
   min-height: 81vh;
  justify-content: left;
+}
+
+.logout-p{
+  font-size: 25px;
+  text-align: center;
 }
 
 

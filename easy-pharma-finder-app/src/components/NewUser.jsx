@@ -163,7 +163,7 @@ const NewUser = () => {
 
                             </fieldset>
 
-                            <div className="button-container">
+                            <div className="button-submit">
                                 <button type="submit" id="submit" >Submit</button>
                             </div>
 
@@ -173,7 +173,7 @@ const NewUser = () => {
                 :
 
                 (<div className='message'>
-                    <p id>You have successfully submitted the form. Please click the below button to view your prescription cost at pharmacies near your location.</p>
+                    <p>You have successfully submitted the form. Please click the below button to view your prescription cost at pharmacies near your location.</p>
 
                     <button id="pharma-finder" type ="button" onClick= { () => 
                                                         navigate('/pharma-finder', {state:{user}} )//Navigate tp pharma finder page and passing the user data, when the user clicks the button.

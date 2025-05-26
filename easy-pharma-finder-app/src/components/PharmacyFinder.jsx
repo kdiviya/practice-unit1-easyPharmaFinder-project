@@ -10,13 +10,16 @@ const PharmacyFinder = ({pharmacyData}) => {
     //create variable to access the state navigated from NewUser.jsx
     const location = useLocation();
     const user = location.state.user; //Destructuring an object
-   
+    
+    const existingUser = location.state.existingUserData;
+    let zipCode = user ? user.zipCode : existingUser.address.zipCode;
+    
     const pharmacyArr =[]; //Array that contains the pharmacy names for user's pin code.
     const medList = {}; //Object that contains the medication details
     
     //Add the pharmacy names into an array "pharmacyArr" by checking user's zipcode 
-        if(pharmacyData[user.zipCode]) {
-            pharmacyData[user.zipCode].forEach((name) => {
+        if(pharmacyData[zipCode] ) {
+            pharmacyData[zipCode].forEach((name) => {
                 pharmacyArr.push(name.pharmacyName);
             });
     
@@ -46,26 +49,33 @@ const PharmacyFinder = ({pharmacyData}) => {
                { Object.keys(medList).map((pName)=> (
                     <div key="pName">
                         <h3>{pName}</h3>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Medication Name</th>
-                                    <th>Actual Cost(in $)</th>
-                                    <th>Insurance Deduction in(%)</th>
-                                    <th>Copay</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            {medList[pName].map((medLists, key) => (
-                                <tr id="key">
-                                    <td>{medLists.med}</td>
-                                    <td>${medLists.cost}</td>
-                                    <td>{medLists.insuranceDeduction}%</td>
-                                    <td>${medLists.copay}</td>
-                                </tr>
-                            ))}
-                            </tbody>
-                        </table>
+
+                        <div className="med-table">
+                            <table className="medication-table">
+                                <thead>
+                                    <tr>
+                                        <th>Medication Name</th>
+                                        <th>Actual Cost(in $)</th>
+                                        <th>Insurance Deduction in(%)</th>
+                                        <th>Copay</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {medList[pName].map((medLists, key) => (
+                                    <tr id="key">
+                                        <td>{medLists.med}</td>
+                                        <td>${medLists.cost}</td>
+                                        <td>{medLists.insuranceDeduction}%</td>
+                                        <td>${medLists.copay}</td>
+                                    </tr>
+                                ))}
+                                </tbody>
+                            </table>
+                            <div className="order-button">
+                                <button type="button">Click to order</button>
+                            </div>
+                        </div>
+
                     </div>
                ))}
 

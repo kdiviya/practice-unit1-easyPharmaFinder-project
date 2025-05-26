@@ -11,7 +11,7 @@ const About = () => {
                 <h2>Know More, Pay Less – About My Journey</h2>
                 <p>I believe that everyone should have easy access to transparent, reliable, and personalized information about their medication costs. This application is committed to helping users to make informed decisions and compare prescription prices at local pharmacies.
                     It offers a quick, convenient way to see the real costs of medications, including:</p>
-                    <ul>
+                    <ul className="about">
                         <li>The actual price of prescriptions.</li>
                         <li>Your deductible status and insurance copay information.</li>
                         <li>Personalized pricing based on pharmacy name and insurance plan.</li>

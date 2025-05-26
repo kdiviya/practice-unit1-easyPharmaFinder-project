@@ -1,0 +1,19 @@
+{
+    "firstName": "Sara",
+    "middleName": "Joy",
+    "lastName": "Hill",
+    "dob":"05/05/19990",
+    "email":"sara@gmail.com",
+    "contactNo":"234-456-8976",
+    "lastVistedDate":"03/03/2025",
+    "address":{
+        "street":"Main St",
+        "city":"Olathe",
+        "state":"kansas",
+        "country":"US",
+        "zipCode":"66209"
+    },
+    "insuranceNo": 456789,
+    "insuranceType":"HMO"
+
+}
