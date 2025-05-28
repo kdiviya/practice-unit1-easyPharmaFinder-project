@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import prescriptionData from '../sample-data/prescriptionData.json';
 import {useLocation } from "react-router-dom";
 import "./css/pharmacy.css";
+import ReusableButton from "./ReusableButton";
 
 
 const PharmacyFinder = ({pharmacyData}) => {
@@ -44,7 +45,6 @@ const PharmacyFinder = ({pharmacyData}) => {
     const handleOrder = (e) => {
         const pharmacyName = e.target.name;
         let url;
-        console.log("name" ,pharmacyName);
         
         if (pharmacyName === "CVS Pharmacy") {
             url = "https://www.cvs.com/pharmacy";
@@ -68,7 +68,7 @@ const PharmacyFinder = ({pharmacyData}) => {
         <div className="p-container">
             <Header />
             <div className="p-content"> 
-                <h2>Pharmacy Prescription Details</h2>
+                <h2 className='h2-animation'>Pharmacy Prescription Details</h2>
 
                 { Object.keys(medList).map((pName)=> (
                     <div key={pName}>
@@ -96,7 +96,7 @@ const PharmacyFinder = ({pharmacyData}) => {
                                 </tbody>
                             </table>
                             <div className="order-button">
-                                <button type="button" name={pName} onClick={handleOrder}>Click to order</button>
+                                <ReusableButton type="button" name={pName} onClick={handleOrder}>Click to order</ReusableButton>
                             </div>
                         </div>
 

@@ -24,7 +24,7 @@ const Header = () => {
     }
 
     return (
-        <div className="custom-nav">
+        <nav className="custom-nav">
             <img src={logo} alt="Mortar Pestle Logo" className="logo"/>
             <h1>Easy Pharma Finder</h1>
 
@@ -81,7 +81,7 @@ const Header = () => {
                 </div>
             )}
 
-        </div>
+        </nav>
     );
 
 };

@@ -4,7 +4,7 @@ import {Country, State} from "country-state-city";
 import { useState} from "react";
 import { Form, useNavigate } from "react-router-dom";
 import PharmacyFinder from "./PharmacyFinder";
-
+import ReusableButton from "./ReusableButton";
 
 const NewUser = () => {
    
@@ -90,7 +90,7 @@ const NewUser = () => {
             <Header />
            {isFormVisible ? 
                 (<div className="content">
-                    <h2>New User Form </h2>
+                    <h2 className='h2-animation'>New User Form </h2>
                     <form className="new-user-form" onSubmit={handleSubmit}> 
 
                         <label>Enter your first name *</label>
@@ -163,7 +163,7 @@ const NewUser = () => {
                         </fieldset>
 
                         <div className="button-submit">
-                            <button type="submit" id="submit" >Submit</button>
+                            <ReusableButton type="submit" id="submit" name="submit" >Submit</ReusableButton>
                         </div>
 
                     </form>
@@ -174,10 +174,10 @@ const NewUser = () => {
                 (<div className='message'>
                     <p>You have successfully submitted the form. Please click the below button to view your prescription cost at pharmacies near your location.</p>
 
-                    <button id="pharma-finder" type ="button" onClick= { () => 
+                    <ReusableButton id="pharma-finder" type ="button" name="pharma-finder" onClick= { () => 
                                                         navigate('/pharma-finder', {state:{user}} )//Navigate to pharma finder page and passing the user data, when the user clicks the button.
                                                     }
-                    >Pharma Finder</button>
+                    >Pharma Finder</ReusableButton>
                     
                 </div>)   
 

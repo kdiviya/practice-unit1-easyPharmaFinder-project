@@ -2,7 +2,8 @@ import Header from './Header';
 import Footer  from './Footer';
 import {useState} from 'react';
 import {Form, useNavigate} from 'react-router-dom';
-import "./css/login.css";
+import './css/login.css';
+import ReusableButton from './ReusableButton';
 
 
 const LoginInfo = () => {
@@ -45,12 +46,12 @@ const LoginInfo = () => {
 
                     <div>
                         <label>Password</label>
-                        <input type="password" id="name" name="password" value={login.password} onChange={handleChange}></input>
+                        <input type="password" id="password" name="password" value={login.password} onChange={handleChange}></input>
                     </div>
                     
-                    <button id="login-button" type="submit" name="login" onClick = { () => 
+                    <ReusableButton id="login-button" type="submit" name="login" onClick = { () => 
                                                                     navigate('/existing-user', {state:{login}})}
-                    >Login</button>
+                    >Login</ReusableButton>
 
                 </form>
             </div>
