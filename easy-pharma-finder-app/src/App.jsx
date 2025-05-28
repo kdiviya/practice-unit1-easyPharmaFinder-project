@@ -8,8 +8,6 @@ import PharmacyFinder from './components/PharmacyFinder';
 import LoginInfo from './components/LoginInfo';
 import ExistingUser from './components/ExistingUser';
 import Logout from './components/Logout';
-
-
 import './App.css';
 
 function App() {

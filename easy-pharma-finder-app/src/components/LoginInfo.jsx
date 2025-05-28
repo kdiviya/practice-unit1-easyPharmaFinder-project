@@ -25,12 +25,9 @@ const LoginInfo = () => {
     
     const handleLoginButton = (e) => {
         e.preventDefault();
-        const localName = localStorage.getItem("userName");
-        const localPwd = localStorage.getItem("password");
-
+        
         localStorage.setItem("userName", login.userName);
         localStorage.setItem("password", login.password);     
-     
 
     };
 

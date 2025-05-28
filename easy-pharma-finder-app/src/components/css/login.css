@@ -1,4 +1,4 @@
- .login-form {
+.login-form {
     display:flex;
     flex-direction:column;
     font-size: 20px;
@@ -24,5 +24,9 @@
     font-size: 20px;
     width:100px;
     cursor: pointer;
+}
 
- }
+#login-button:hover{
+   background-color: #72c0ee;
+}
+
