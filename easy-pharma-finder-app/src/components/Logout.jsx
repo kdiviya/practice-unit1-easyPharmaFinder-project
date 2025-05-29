@@ -8,6 +8,7 @@ const Logout = () => {
         if(typeof window !=='undefined'){
             localStorage.removeItem("userName");
             localStorage.removeItem("password");
+            window.location.href = "/"; 
         }
             }, 
             []
