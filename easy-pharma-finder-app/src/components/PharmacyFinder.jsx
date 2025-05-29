@@ -47,7 +47,7 @@ const PharmacyFinder = ({pharmacyData}) => {
                 
             }     
         }
-        console.log(medList)
+       
      
     }
 
@@ -103,7 +103,7 @@ const PharmacyFinder = ({pharmacyData}) => {
                                     </tr>
                                 ))}
                                 </tbody>
-                                
+
                             </table>
                             <div className="order-button">
                                 <ReusableButton type="button" name={pName} onClick={handleOrder}>Click to order</ReusableButton>

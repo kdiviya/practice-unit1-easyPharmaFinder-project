@@ -5,10 +5,13 @@ import {useEffect} from 'react';
 const Logout = () => {
 
     useEffect( () => {
-        localStorage.removeItem("userName");
-        localStorage.removeItem("password");
-        }, 
-        []
+        if(typeof window !=='undefined'){
+            localStorage.removeItem("userName");
+            localStorage.removeItem("password");
+        }
+            }, 
+            []
+        
     );
 console.log("logout");
     return (
