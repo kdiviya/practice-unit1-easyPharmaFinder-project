@@ -73,7 +73,7 @@ const Header = () => {
                             userLogged != "" && userLogged !== null &&
                             <>
                                 <li><span><FontAwesomeIcon icon={faUser} /></span>{userLogged}</li>
-                                <li><Link to= "/logout"><FontAwesomeIcon icon={faRightFromBracket} />Logout</Link></li>
+                                <li><Link to= "/logout" onClick={handleLogout}><FontAwesomeIcon icon={faRightFromBracket} />Logout</Link></li>
                      
                             </>
                         }
