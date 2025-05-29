@@ -11,8 +11,8 @@ const PharmacyFinder = ({pharmacyData}) => {
     //create variable to access the state navigated from NewUser.jsx
     const location = useLocation();
     const user = location.state.user; //Destructuring an object
-    
-    const existingUser = location.state.existingUserData;
+   
+    const existingUser = location.state.loggedUser;
     let zipCode = user ? user.zipCode : existingUser.address.zipCode;
     
     const pharmacyArr =[]; //Array that contains the pharmacy names for user's pin code.
@@ -28,18 +28,27 @@ const PharmacyFinder = ({pharmacyData}) => {
     //Iterate the pharmacyArr and get the medication details for each pharmacy and stored into object "medList"
         for(let idx=0; idx<pharmacyArr.length; idx++) {
             const pharmacyName = pharmacyArr[idx];
+
             if(prescriptionData[pharmacyName]) {
+                let totalPrice = 0;
                 medList[pharmacyName] = prescriptionData[pharmacyName].map((medication) => {
                     let copay = medication.actualCost - ((medication.insurancePaidPercent/100) * medication.actualCost); //calculate the copay
+                    totalPrice += copay;
                         return {
                             med: medication.medicationName,
                             cost: medication.actualCost,
                             insuranceDeduction: medication.insurancePaidPercent,
-                            copay:copay
-                        };     
+                            copay:copay,
+                            
+                            
+                        };
                 }); 
-            }
+               
+                
+            }     
         }
+        console.log(medList)
+     
     }
 
     const handleOrder = (e) => {
@@ -94,6 +103,7 @@ const PharmacyFinder = ({pharmacyData}) => {
                                     </tr>
                                 ))}
                                 </tbody>
+                                
                             </table>
                             <div className="order-button">
                                 <ReusableButton type="button" name={pName} onClick={handleOrder}>Click to order</ReusableButton>

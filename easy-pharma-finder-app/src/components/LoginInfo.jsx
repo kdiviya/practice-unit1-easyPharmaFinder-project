@@ -6,7 +6,7 @@ import './css/login.css';
 import ReusableButton from './ReusableButton';
 
 
-const LoginInfo = () => {
+const LoginInfo = ({existingUserData, setExistingUserVal}) => {
     
     const [login, setLogin] = useState({
         userName:"",
@@ -26,10 +26,14 @@ const LoginInfo = () => {
     
     const handleLoginButton = (e) => {
         e.preventDefault();
-        
-        localStorage.setItem("userName", login.userName);
-        localStorage.setItem("password", login.password);     
+        const foundUser = existingUserData.find((user) => user.userName === login.userName);
 
+        if(foundUser) {
+            localStorage.setItem("userName", login.userName);
+            localStorage.setItem("password", login.password); 
+            navigate('/existing-user', {state:{foundUser}});
+        }
+        
     };
 
     return (
@@ -49,9 +53,7 @@ const LoginInfo = () => {
                         <input type="password" id="password" name="password" value={login.password} onChange={handleChange}></input>
                     </div>
                     
-                    <ReusableButton id="login-button" type="submit" name="login" onClick = { () => 
-                                                                    navigate('/existing-user', {state:{login}})}
-                    >Login</ReusableButton>
+                    <ReusableButton id="login-button" type="submit" name="login">Login</ReusableButton>
 
                 </form>
             </div>

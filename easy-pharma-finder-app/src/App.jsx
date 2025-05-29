@@ -1,6 +1,7 @@
 import pharmacyData from './sample-data/pharmacyData.json';
 import existingUserData from './sample-data/existingUserData.json';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {useState} from 'react';
 import About from './components/About';
 import Introduction from './components/Introduction';
 import NewUser from './components/NewUser';
@@ -11,6 +12,8 @@ import Logout from './components/Logout';
 import './App.css';
 
 function App() {
+
+
   return (
     <Router>
       <Routes>
@@ -26,10 +29,10 @@ function App() {
         <Route path = "/pharma-finder" element={<PharmacyFinder  pharmacyData={pharmacyData}/>}
         />
 
-        <Route path = "/login" element={<LoginInfo />}
+        <Route path = "/login" element={<LoginInfo existingUserData = {existingUserData} />}
         />
 
-        <Route path = "/existing-user" element={<ExistingUser existingUserData = {existingUserData}/>}
+        <Route path = "/existing-user" element={<ExistingUser />}
         /> 
 
         <Route path = "/logout" element={<Logout />}

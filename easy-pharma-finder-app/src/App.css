@@ -30,7 +30,7 @@ h2 {
 .h2-animation {
   opacity: 0;
   transform: translateX(-150px);
-  animation: slideLeft 2s ease-out forwards;
+  animation: slideLeft 1s ease-out forwards;
 }
 
 @keyframes slideLeft {

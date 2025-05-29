@@ -3,7 +3,6 @@ import Footer from "./Footer";
 import {Country, State} from "country-state-city";
 import { useState} from "react";
 import { Form, useNavigate } from "react-router-dom";
-import PharmacyFinder from "./PharmacyFinder";
 import ReusableButton from "./ReusableButton";
 
 const NewUser = () => {
@@ -80,7 +79,6 @@ const NewUser = () => {
     //It triggers, when the user click the submit button.
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(user);
         setIsformVisible(!isFormVisible);    
     }
 
@@ -177,7 +175,7 @@ const NewUser = () => {
                     <ReusableButton id="pharma-finder" type ="button" name="pharma-finder" onClick= { () => 
                                                         navigate('/pharma-finder', {state:{user}} )//Navigate to pharma finder page and passing the user data, when the user clicks the button.
                                                     }
-                    >Pharma Finder</ReusableButton>
+                    >Pharmacy Finder</ReusableButton>
                     
                 </div>)   
 
