@@ -14,6 +14,7 @@ const Header = () => {
     useEffect( () => {
             let user = localStorage.getItem("userName");
             setUserLogged(user);
+            console.log("header", user);
         }, 
         []
     );

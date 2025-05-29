@@ -10,7 +10,7 @@ const Logout = () => {
         }, 
         []
     );
-
+console.log("logout");
     return (
 
         <div className='container'>
