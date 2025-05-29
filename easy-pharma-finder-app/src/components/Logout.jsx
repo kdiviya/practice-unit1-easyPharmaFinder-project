@@ -5,16 +5,14 @@ import {useEffect} from 'react';
 const Logout = () => {
 
     useEffect( () => {
-        if(typeof window !=='undefined'){
+       
             localStorage.removeItem("userName");
             localStorage.removeItem("password");
-            window.location.href = "/"; 
-        }
-            }, 
-            []
+        }, 
+        []
         
     );
-console.log("logout");
+
     return (
 
         <div className='container'>

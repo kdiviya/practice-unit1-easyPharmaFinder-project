@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faUser,faMortarPestle, faLock, faRightFromBracket, faBars} from '@fortawesome/free-solid-svg-icons';
 import logo from './images/logo.jpeg';
 
+//Displays the title and the nav link menus on the application. This component is reused in all the pages based on the user interaction.
 const Header = () => {
 
     //create state variable to store the user's logged in name
@@ -12,12 +13,17 @@ const Header = () => {
 
     //Every time page loads, get the username from the local storage
     useEffect( () => {
-            let user = localStorage.getItem("userName");
-            setUserLogged(user);
-            console.log("header", user);
+        let user = localStorage.getItem("userName");
+        setUserLogged(user);
         }, 
         []
     );
+
+    const handleLogout = () =>{
+        localStorage.removeItem("username");
+        localStorage.removeItem("password");
+        setUserLogged("");
+    }
 
     //set the value true or false to display the menu when the user click the toogle in mobile/tabs
     const toggleMobileMenu = () => {
@@ -26,26 +32,26 @@ const Header = () => {
 
     return (
         <nav className="custom-nav">
-            <img src={logo} alt="Mortar Pestle Logo" className="logo"/>
+            <img src={logo} alt="Pharmacy symbol - Mortar Pestle Logo" className="logo"/>
             <h1>Easy Pharma Finder</h1>
 
-            <span className ="toggle-menu" onClick={toggleMobileMenu}>
+            <span className ="toggle-menu" onClick={toggleMobileMenu}>  
                 <FontAwesomeIcon icon={faBars} size="2x" />
             </span>
 
             <ul id="menu">
                 <li><Link to="/"><FontAwesomeIcon icon={faHouse} />Home</Link></li>
                 <li><Link to="/about"><FontAwesomeIcon icon={faMortarPestle} />About us</Link></li>
-                {
+                {//if user is logged, then username and logout should be displayed in the nav link
                     userLogged != "" && userLogged !== null &&
                     <>
                         <li><span><FontAwesomeIcon icon={faUser} /></span>{userLogged}</li>
-                        <li><Link to= "/logout"><FontAwesomeIcon icon={faRightFromBracket} />Logout</Link></li>
+                        <li><Link to= "/logout" onClick={handleLogout}><FontAwesomeIcon icon={faRightFromBracket} />Logout</Link></li>
                      
                     </>
                 }
 
-                {
+                { //The New User and Login should be dispalyed if the user is not logged in.
                     (userLogged == ""  || userLogged == null ) &&  
                     <>
                         <li><Link to= "/new-user"><FontAwesomeIcon icon={faUser}/>New User</Link></li>
@@ -55,32 +61,34 @@ const Header = () => {
                 }
                 
             </ul>
-            {showMobileMenu && (
-                <div id="mobile-menu">
+
+            { //Used conditional rendering to show the bar icon for mobiles and tablets.
+                showMobileMenu && 
+                (<div id="mobile-menu">
                     <ul id ="mobile-menu-ul">
-                    <li><Link to="/"><FontAwesomeIcon icon={faHouse} />Home</Link></li>
-                    <li><Link to="/about"><FontAwesomeIcon icon={faMortarPestle} />About us</Link></li>
-                    {
-                        userLogged != "" && userLogged !== null &&
-                        <>
-                            <li><span><FontAwesomeIcon icon={faUser} /></span>{userLogged}</li>
-                            <li><Link to= "/logout"><FontAwesomeIcon icon={faRightFromBracket} />Logout</Link></li>
+                        <li><Link to="/"><FontAwesomeIcon icon={faHouse} />Home</Link></li>
+                        <li><Link to="/about"><FontAwesomeIcon icon={faMortarPestle} />About us</Link></li>
+                        {
+                            userLogged != "" && userLogged !== null &&
+                            <>
+                                <li><span><FontAwesomeIcon icon={faUser} /></span>{userLogged}</li>
+                                <li><Link to= "/logout"><FontAwesomeIcon icon={faRightFromBracket} />Logout</Link></li>
                      
-                        </>
-                    }
+                            </>
+                        }
 
-                    {
-                        (userLogged == ""  || userLogged == null ) &&  
-                        <>
-                            <li><Link to= "/new-user"><FontAwesomeIcon icon={faUser}/>New User</Link></li>
-                            <li><Link to="/login"><FontAwesomeIcon icon={faLock}/>Login</Link></li>
-                        </>
+                        {
+                            (userLogged == ""  || userLogged == null ) &&  
+                            <>
+                                <li><Link to= "/new-user"><FontAwesomeIcon icon={faUser}/>New User</Link></li>
+                                <li><Link to="/login"><FontAwesomeIcon icon={faLock}/>Login</Link></li>
+                            </>
 
-                    }
+                        }
                 
                     </ul>
-                </div>
-            )}
+                </div>)
+            }
 
         </nav>
     );
