@@ -20,9 +20,10 @@ const Header = () => {
     );
 
     const handleLogout = () =>{
-        localStorage.removeItem("username");
+        localStorage.removeItem("userName");
         localStorage.removeItem("password");
         setUserLogged("");
+       
     }
 
     //set the value true or false to display the menu when the user click the toogle in mobile/tabs
@@ -54,7 +55,7 @@ const Header = () => {
                 { //The New User and Login should be dispalyed if the user is not logged in.
                     (userLogged == ""  || userLogged == null ) &&  
                     <>
-                        <li><Link to= "/new-user"><FontAwesomeIcon icon={faUser}/>New User</Link></li>
+                        <li><Link to= "/new-user"><FontAwesomeIcon icon={faUser}/>New user</Link></li>
                         <li><Link to="/login"><FontAwesomeIcon icon={faLock}/>Login</Link></li>
                     </>
 
@@ -80,7 +81,7 @@ const Header = () => {
                         {
                             (userLogged == ""  || userLogged == null ) &&  
                             <>
-                                <li><Link to= "/new-user"><FontAwesomeIcon icon={faUser}/>New User</Link></li>
+                                <li><Link to= "/new-user"><FontAwesomeIcon icon={faUser}/>New user</Link></li>
                                 <li><Link to="/login"><FontAwesomeIcon icon={faLock}/>Login</Link></li>
                             </>
 

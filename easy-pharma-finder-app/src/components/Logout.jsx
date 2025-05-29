@@ -1,18 +1,17 @@
 import Header from './Header';
 import Footer  from './Footer';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 
 const Logout = () => {
+    const [user, setUser] = useState("");
 
     useEffect( () => {
        
-            localStorage.removeItem("userName");
-            localStorage.removeItem("password");
-        }, 
-        []
-        
-    );
-
+        const userName = localStorage.getItem("userName")
+        setUser(userName);
+    }, 
+    []);
+    
     return (
 
         <div className='container'>
