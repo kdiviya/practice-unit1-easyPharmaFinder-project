@@ -1,22 +1,26 @@
 import Header from './Header';
 import Footer  from './Footer';
-import {useState} from 'react';
-import {Form, useNavigate} from 'react-router-dom';
-import './css/login.css';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ReusableButton from './ReusableButton';
+import './css/login.css';
 
-
-const LoginInfo = ({existingUserData, setExistingUserVal}) => {
+//Display the username and password when the user clicks the Login menu. {existingUserData} is passed as a props from App.jsx.
+const LoginInfo = ({existingUserData}) => {
     
+    //create state variable to store the logged user credentials.
     const [login, setLogin] = useState({
         userName:"",
         password:""
     });
 
+    //create navigate variable for navigating to existing user details page and passed the logged user's data.
     const navigate = useNavigate();
 
+    //update the user entered username and password 
     const handleChange = (e) => {
         const{name, value} =  e.target;
+
         setLogin(currentVal => ({
             ...currentVal,
             [name]:value
@@ -24,14 +28,15 @@ const LoginInfo = ({existingUserData, setExistingUserVal}) => {
 
     };
     
+    //when the user clicks the login button, it username and password is stored in the local storage.
     const handleLoginButton = (e) => {
         e.preventDefault();
-        const foundUser = existingUserData.find((user) => user.userName === login.userName);
+        const foundUser = existingUserData.find((user) => user.userName === login.userName); //Assign the logged user details to foundUser.
 
         if(foundUser) {
             localStorage.setItem("userName", login.userName);
             localStorage.setItem("password", login.password); 
-            navigate('/existing-user', {state:{foundUser}});
+            navigate('/existing-user', {state:{foundUser}}); //pass the logged user details to /existing-user page
         }
         
     };
@@ -60,9 +65,6 @@ const LoginInfo = ({existingUserData, setExistingUserVal}) => {
 
             <Footer />
         </div>
-
-
-
     )
 }
 

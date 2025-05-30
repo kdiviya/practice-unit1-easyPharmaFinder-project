@@ -1,3 +1,4 @@
+//create reusable Footer component to display the footer for all the webpages.
 const Footer = () => {
 
     return (

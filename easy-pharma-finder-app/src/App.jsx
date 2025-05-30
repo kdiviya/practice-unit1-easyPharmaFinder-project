@@ -1,7 +1,6 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import pharmacyData from './sample-data/pharmacyData.json';
 import existingUserData from './sample-data/existingUserData.json';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import {useState} from 'react';
 import About from './components/About';
 import Introduction from './components/Introduction';
 import NewUser from './components/NewUser';
@@ -17,6 +16,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        
         <Route path= "/" element={<Introduction />}
         />
 

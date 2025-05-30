@@ -1,24 +1,22 @@
-import Header from "./Header";
-import Footer from "./Footer";
-import {Country, State} from "country-state-city";
-import { useState} from "react";
-import { Form, useNavigate } from "react-router-dom";
-import ReusableButton from "./ReusableButton";
+import { Country, State } from 'country-state-city';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Header from './Header';
+import Footer from './Footer';
+import ReusableButton from './ReusableButton';
 
+//Displays the new user form and store the user's details dynamically.
 const NewUser = () => {
    
-    //create state variable for country, state  & cities and get the values from the package "country-state-city"
+    //create state variable for country, state and get the values from the package "country-state-city"
     const[countries, setCountries] = useState(Country.getAllCountries());
     const[states, setStates] = useState([]);
-    const[cities, setCities] = useState([]);
- 
-    const[selectedCountry, setSelectedCountry] = useState(null);
-    const[selectedState, setSelectedState] = useState(null);
+    const[selectedCountry, setSelectedCountry] = useState(null); // create state variable to store the user selected country.
 
-    //Hide the form after clicking submit button and display the confirmation messsage to the user  using the state variable.
+    //Hide the form after clicking submit button and display the confirmation messsage to the user using this state variable.
     const [isFormVisible, setIsformVisible] = useState(true);
 
-    //create state variable to navigate user data to other component.
+    //create state variable to navigate user data to other component "PharmacyFinder".
     const navigate = useNavigate();
 
     //Create a state variable to store the form data
@@ -39,10 +37,11 @@ const NewUser = () => {
         insuranceType:""
     });
 
+    //Update the state variable when the user enter's the data in the form.
     const handleInputChange = (e) => {
-        const{ name, value } = e.target; //assign the name and value of the HTMl element.
 
-        setUser((currentVal) => ({ //Assign the user enterd values to the state variable "user".
+        const { name, value } = e.target; //Assign the name and value of the HTMl element.
+        setUser((currentVal) => ({ //Update the user entered values to the state variable "user".
             ...currentVal,
             [name]:value
         }));
@@ -51,9 +50,9 @@ const NewUser = () => {
 
    //When the user selects the country, all the states of that country is displayed
    const handleCountryChange = (e) => {
+
         const userSelectedCountry = countries.find((country) => country.name === e.target.value);   
         setSelectedCountry(userSelectedCountry);
-
         setUser((currentVal) => ({
             ...currentVal,
             country:userSelectedCountry
@@ -66,9 +65,8 @@ const NewUser = () => {
     //When the user selects the state, update the user's state name.
     const handleStateChange = (e) => {
         const userSelectedState = states.find((state) => state.name === e.target.value);//Get the details(ie state object) of user selected state value.
-        setSelectedState(userSelectedState);
 
-        //updates the variable "user" when the user selects the state
+        //updates the state variable "user" when the user selects the state
         setUser((currentVal) => ({
             ...currentVal,
             state:(userSelectedState ? userSelectedState.name: "")
@@ -84,11 +82,13 @@ const NewUser = () => {
 
     return (
         <div className="container">
-
             <Header />
-           {isFormVisible ? 
+
+           { isFormVisible ? 
+
                 (<div className="content">
                     <h2 className='h2-animation'>New User Form </h2>
+
                     <form className="new-user-form" onSubmit={handleSubmit}> 
 
                         <label>Enter your first name *</label>
@@ -180,10 +180,9 @@ const NewUser = () => {
                 </div>)   
 
             }
+
             <Footer />
-
         </div>
-
     );
 };
 
